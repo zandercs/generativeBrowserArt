@@ -2,6 +2,7 @@
     
     // CONFIG
     let gridSize = 10;
+    let borderSize = 10;
 
     resetFontSize();
 
@@ -9,10 +10,11 @@
 
     function resetFontSize() {
         if (window.innerHeight <= window.innerWidth){
-            document.querySelector("body").style.fontSize = (window.innerHeight / gridSize) + "px";
+            document.querySelector("body").style.fontSize = ((window.innerHeight - (borderSize * 2)) / gridSize) + "px";
         } else {
-            document.querySelector("body").style.fontSize = (window.innerWidth / gridSize) + "px";
+            document.querySelector("body").style.fontSize = ((window.innerWidth - (borderSize * 2)) / gridSize) + "px";
         }
+        document.querySelector("body").style.border = borderSize + "px";
     }
 
     // CONFIG
@@ -135,6 +137,7 @@
         // intervals.push(setInterval(updateGrid, 250, squares, colorPallette2, defaultBlankCharFreq));
         // intervals.push(setInterval(updateGrid, 200, triangles, colorPallette1, triangles.length));
 
+        intervals.push(setInterval(updateGrid, 100, trigrams.concat(i2trianglesAbridged), colorPallette1, trigrams.length * 4));
         intervals.push(setInterval(updateGrid, 300, i2trianglesAbridged, colorPallette2, (i2trianglesAbridged.length * 2)));
         intervals.push(setInterval(updateGrid, 200, squares.concat(trigrams), colorPallette1, squares.length + trigrams.length));
         intervals.push(setInterval(updateGrid, 1500, squares, colorPallette2, defaultBlankCharFreq));

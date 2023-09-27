@@ -1,7 +1,7 @@
 (function() {
     
     // CONFIG
-    let gridSize = 20;
+    let gridSize = 10;
 
     resetFontSize();
 

@@ -109,7 +109,7 @@
 
     startRender();
 
-    let pauseInterval = setInterval(()=>toggleRender(), 2500);
+    let pauseInterval = setInterval(()=>toggleRender(), 6000);
 
     // window.addEventListener("click", toggleRender);
     document.addEventListener("click", toggleFullScreen);

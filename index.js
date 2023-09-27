@@ -1,7 +1,19 @@
 (function() {
     
     // CONFIG
-    let gridSize = 10;
+    let gridSize = 20;
+
+    resetFontSize();
+
+    window.addEventListener("resize", resetFontSize);
+
+    function resetFontSize() {
+        if (window.innerHeight <= window.innerWidth){
+            document.querySelector("body").style.fontSize = (window.innerHeight / gridSize) + "px";
+        } else {
+            document.querySelector("body").style.fontSize = (window.innerWidth / gridSize) + "px";
+        }
+    }
 
     // CONFIG
     const defaultBlankCharFreq = 0;
@@ -97,8 +109,17 @@
 
     let pauseInterval = setInterval(()=>toggleRender(), 2500);
 
-    window.addEventListener("click", toggleRender);
+    // window.addEventListener("click", toggleRender);
+    document.addEventListener("click", toggleFullScreen);
 
+    function toggleFullScreen() {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.querySelector("body").requestFullscreen();
+        }
+    }
+    
     function toggleRender(){
         if (intervals.length > 0) {
             stopRender();

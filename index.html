@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Generative Art</title>
+    <style>
+        body {
+            /* font-size: 15px; */
+            font-size: 95px;
+            padding: 0px;
+            margin: 0px;
+            background-color: #000;
+            /* color: #ff00ff; */
+            overflow-y: hidden;
+        }
+
+        .cyan {
+            color: #00FFFF;
+        }
+
+        .magenta {
+            color:#ff00ff;
+        }
+
+        /* pre {
+            line-height: 1;
+        } */
+
+        #grid {
+            margin: 0 auto;
+            width:auto;
+        }
+        
+        .row {
+            line-height: 1em;
+        }
+
+        .cell {
+            display: inline-block;
+            text-align: center;
+            width: 1em;
+            height: 1em;
+
+            -webkit-animation: glow .1s ease-in-out infinite alternate;
+            -moz-animation: glow .1s ease-in-out infinite alternate;
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        .cell span {
+            padding: 0;
+            margin: 0 auto;
+            height: inherit;
+            width: inherit;
+            display: block;
+
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .backward {
+            display: inline-block;
+            -moz-transform: scale(-1, 1);
+            -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+        }
+
+        .upsideDown {
+            display: inline-block;
+            -moz-transform: scale(-1);
+            -webkit-transform: scale(-1);
+            transform: scale(-1);
+        }
+
+        /* .topLeft {
+            
+        } */
+
+        .topRight {
+            -moz-transform: scale(-1, 1);
+            -webkit-transform: scale(-1, 1);
+            transform: scale(-1, 1);
+        }
+
+        .bottomRight {
+            -moz-transform: scale(-1);
+            -webkit-transform: scale(-1);
+            transform: scale(-1);
+        }
+
+        .bottomLeft {
+            -moz-transform: scale(1,-1);
+            -webkit-transform: scale(1,-1);
+            transform: scale(1,-1);
+        }
+
+        .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
+        /* @-webkit-keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+            }
+        } */
+
+        @-webkit-keyframes glow {
+            from {
+                text-shadow: 20px 0 5px #fff, 10px 0 10px #fff, 0 20px 15px #ff00ff, 0 10px 20px #ff00ff, 0 10px 25px #ff00ff, 0 20px 10px #ff00ff, 0 10px 20px #ff00ff;
+            }
+            to {
+                text-shadow: 10px 0 15px #fff, 20px 0 20px #0CCDDB, 0 10px 25px #0CCDDB, 0 20px 30px #0CCDDB, 0 20px 25px #0CCDDB, 0 10px 20px #0CCDDB, 0 20px 15px #0CCDDB;
+            }
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+  </head>
+  <body>
+    <div class="center" id="grid"></div>
+	<script src="index.js"></script>
+  </body>
+</html>

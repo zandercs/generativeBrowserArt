@@ -137,11 +137,18 @@
         // intervals.push(setInterval(updateGrid, 250, squares, colorPallette2, defaultBlankCharFreq));
         // intervals.push(setInterval(updateGrid, 200, triangles, colorPallette1, triangles.length));
 
-        intervals.push(setInterval(updateGrid, 200, trigrams.concat(i2trianglesAbridged), colorPallette1, trigrams.length * 4));
-        intervals.push(setInterval(updateGrid, 300, i2trianglesAbridged, colorPallette2, (i2trianglesAbridged.length * 2)));
-        intervals.push(setInterval(updateGrid, 200, squares.concat(trigrams), colorPallette1, squares.length + trigrams.length));
-        intervals.push(setInterval(updateGrid, 1500, squares, colorPallette2, defaultBlankCharFreq));
-        intervals.push(setInterval(updateGrid, 1000, triangles, colorPallette1, triangles.length));
+        intervals.push(setInterval(updateGrid, 100, trigrams.concat(i2trianglesAbridged), colorPallette1, (i2trianglesAbridged.length + trigrams.length) * 2));
+        intervals.push(setInterval(updateGrid, 200, squares.concat(i2trianglesAbridged), colorPallette1, i2trianglesAbridged.length + squares.length));
+        intervals.push(setInterval(updateGrid, 300, i2trianglesAbridged, colorPallette1, (i2trianglesAbridged.length)));
+        intervals.push(setInterval(updateGrid, 400, squares.concat(trigrams), colorPallette1, squares.length + trigrams.length));
+        // intervals.push(setInterval(updateGrid, 1000, shades, colorPallette2, shades.length * 4));
+        // intervals.push(setInterval(updateGrid, 1000, triangles, colorPallette1, triangles.length));
+
+        // intervals.push(setInterval(updateGrid, 200, trigrams.concat(i2trianglesAbridged), colorPallette1, trigrams.length * 4));
+        // intervals.push(setInterval(updateGrid, 300, i2trianglesAbridged, colorPallette2, (i2trianglesAbridged.length * 2)));
+        // intervals.push(setInterval(updateGrid, 200, squares.concat(trigrams), colorPallette1, squares.length + trigrams.length));
+        // intervals.push(setInterval(updateGrid, 1500, squares, colorPallette2, defaultBlankCharFreq));
+        // intervals.push(setInterval(updateGrid, 1000, triangles, colorPallette1, triangles.length));
 
         // intervals.push(setInterval(updateGridOrdered, 250, angledTriangles, colorPallette1));
         // intervals.push(setInterval(updateGridExperiment, 150, countdown));

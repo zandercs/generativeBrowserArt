@@ -35,7 +35,7 @@
     // const triangles = ["⟁","⛛","◭","▴","▲","△","◢","◣","◤","◥","◬","⧊","⧎"];
     // Triangles from i2symbol.com
     const i2triangles = ["◄","▲","▼","►","◣","◥","▸","▾","▴","◂","◢","◤","◁","△","▽","▷","∆","∇","▻","◅","⊵","⊴","⊲","⊳","▵","▿","◃","▹","◭","◮","⋫","⋪","⋗","⋖","⫸","⫷","⋬","⋭","⊿","◬","≜","⑅"];
-    const i2trianglesAbridged = ["◄","▲","▼","►","◣","◥","▸","▾","▴","◂","◢","◤","◁","△","▽","▷","∆","∇","▻","◅","⊲","⊳","▵","▿","◃","▹","◭","◮","⋗","⋖","⫸","⫷","⊿","◬","≜","⑅"];
+    const i2trianglesAbridged = ["◄","▲","▼","►","◣","◥","▸","▾","▴","◂","◢","◤","◁","△","▽","▷","∆","∇","▻","◅","⊲","⊳","▵","▿","◃","▹","◭","◮","⫸","⫷","⊿","◬","≜","⑅"];
     const triangles = ["⟁","⛛","◭","◮","▴","▲","△","◢","◣","◤","◥","◬","⧊","⧎","◀","◁","◂","◃","⧏","⧐","⧨","⧩","◸","◹","◺","◿","⟁"];
     const angledTriangles = ["◢","◣","◤","◥"];
 
@@ -188,7 +188,7 @@
         let randomCharacter = getRandomInt(characterArr.length + blankCharFrequency);
         let character = randomCharacter < characterArr.length ? characterArr[randomCharacter] : blankChar;
 
-        let color = hexToRGB(character === blankChar ? blankColor : colorPallette[getRandomInt(colorPallette.length)], 50);
+        let color = hexToRGB(character === blankChar ? blankColor : colorPallette[getRandomInt(colorPallette.length)], 80);
 
         cells.forEach(cell => {
             // cell.innerHTML = "<span>" + character + "</span>";
